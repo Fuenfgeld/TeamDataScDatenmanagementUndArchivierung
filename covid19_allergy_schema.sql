@@ -122,6 +122,32 @@ CREATE INDEX ix_factCondition_gender on factCondition(GENDER_ID);
 CREATE INDEX ix_factCondition_city on factCondition(CITY_ID);
 CREATE INDEX ix_factCondition_study on factCondition(STUDY_ID);
 CREATE INDEX ix_factCondition_snomed on factCondition(SNOMED);
+CREATE VIEW v_patients as
+select DISTINCT 
+  PATIENT_PSPID PATIENT, 
+  BIRTHYEAR, 
+  DEATHYEAR,
+  MARITAL,
+  RACE,
+  ETHNICITY,
+  GENDER,
+  CITY,  
+  AGE,
+  STUDY
+from factObservation fo 
+JOIN dimMarital dm 
+  ON fo.MARITAL_ID = dm.ID 
+join dimRace dr 
+  on dr.ID = fo.RACE_ID 
+join dimEthnicity de 
+  on de.ID = fo.ETHNICITY_ID 
+join dimGender dg 
+  on dg.ID = fo.GENDER_ID
+join dimCity dc 
+  on dc.ID = fo.CITY_ID
+join dimStudy ds 
+  on ds.ID = fo.STUDY_ID
+/* v_patients(PATIENT,BIRTHYEAR,DEATHYEAR,MARITAL,RACE,ETHNICITY,GENDER,CITY,AGE,STUDY) */;
 CREATE VIEW v_observations as
 select
   PATIENT_PSPID PATIENT,
