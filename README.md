@@ -1,7 +1,5 @@
 # TeamDataScDatenmanagementUndArchivierung-
 
-## Willkommen zu unserem Wiki zum Projekt **PREDICT COVID-19**
-
 Hier können Sie einen Workflow zur kollaborativen Analyse einer Datenbank von COVID-19 Patienten einsehen. 
 
 Dieses öffentliche Repository ist eine kursbegleitende Kollaboration von Kursteilnehmern aus dem **Masterstudiengang BIDS** der **Graduate School Rhein-Neckar** in Kooperation mit dem **MIRACUM Konsortium der Medinzin-Informatik-Initiative**. 
